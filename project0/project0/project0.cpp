@@ -1,6 +1,7 @@
 #include <omp.h>
 #include <stdio.h>
 #include <math.h>
+#include <limits>
 
 
 #define NUMT	         4
@@ -22,6 +23,7 @@ int main()
 	fprintf(stderr, "Using %d threads\n", NUMT);
 
 	double maxMegaMults = 0.;
+	double fastestTime = std::numeric_limits<double>::infinity();
 
 	for (int t = 0; t < NUMTRIES; t++)
 	{
@@ -34,12 +36,16 @@ int main()
 		}
 
 		double time1 = omp_get_wtime();
+		double timeElapsed = time1 - time0;
 		double megaMults = (double)ARRAYSIZE / (time1 - time0) / 1000000.;
 		if (megaMults > maxMegaMults)
 			maxMegaMults = megaMults;
+		if (timeElapsed < fastestTime)
+			fastestTime = timeElapsed;
 	}
 
 	printf("Peak Performance = %8.2lf MegaMults/Sec\n", maxMegaMults);
+	printf("Fastest Time = %8.2lf seconds\n", fastestTime);
 
 	// note: %lf stands for "long float", which is how printf prints a "double"
 	//        %d stands for "decimal integer", not "double"
