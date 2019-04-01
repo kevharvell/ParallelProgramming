@@ -5,7 +5,7 @@
 
 
 #define NUMT	         4
-#define ARRAYSIZE       10000	// you decide
+#define ARRAYSIZE       50000	// you decide
 #define NUMTRIES        20		// you decide
 
 float A[ARRAYSIZE];
