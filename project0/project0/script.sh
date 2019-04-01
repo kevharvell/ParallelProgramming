@@ -8,6 +8,6 @@ do
 	do
 		echo ARRAYSIZE = $s
 		g++ -DARRAYSIZE=$s -DNUMT=$t project0.cpp -o project0 -lm -fopenmp
-		./prog
+		./project0
 	done
 done
