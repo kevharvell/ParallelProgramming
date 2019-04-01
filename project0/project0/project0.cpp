@@ -45,7 +45,7 @@ int main()
 	}
 
 	printf("Peak Performance = %8.2lf MegaMults/Sec\n", maxMegaMults);
-	printf("Fastest Time = %8.2lf seconds\n", fastestTime);
+	printf("Fastest Time = %8.9lf seconds\n", fastestTime);
 
 	// note: %lf stands for "long float", which is how printf prints a "double"
 	//        %d stands for "decimal integer", not "double"
