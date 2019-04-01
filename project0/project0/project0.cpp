@@ -3,7 +3,7 @@
 #include <math.h>
 
 
-#define NUMT	         1
+#define NUMT	         4
 #define ARRAYSIZE       10000	// you decide
 #define NUMTRIES        20		// you decide
 
