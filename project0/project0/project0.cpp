@@ -4,7 +4,7 @@
 #include <limits>
 
 
-#define NUMT	         4
+#define NUMT	         1
 #define ARRAYSIZE       100000	// you decide
 #define NUMTRIES        20		// you decide
 
