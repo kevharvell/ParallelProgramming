@@ -4,7 +4,12 @@
 #include <limits>
 
 
-
+#ifndef NUMT
+#define NUMT	         1
+#endif
+#ifndef ARRAYSIZE
+#define ARRAYSIZE       100000	// you decide
+#endif
 #define NUMTRIES        20		// you decide
 
 float A[ARRAYSIZE];
