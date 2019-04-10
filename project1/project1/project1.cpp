@@ -135,6 +135,9 @@ main(int argc, char *argv[])
 		currentProb = (float)numHits / (float)NUMTRIALS;
 		
 	}
+
+	cout << NUMT << "\t" << NUMTRIALS << "\t" << currentProb << "\t" << maxPerformance << endl;
+
 	// log results to "results.txt" file
 	std::ofstream results;
 	results.open("results.txt", std::ios::app);
