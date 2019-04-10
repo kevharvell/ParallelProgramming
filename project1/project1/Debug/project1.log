@@ -1,17 +1,13 @@
-﻿  pch.cpp
+﻿  project1.cpp
 c1xx : warning C4199: two-phase name lookup is not supported for C++/CLI, C++/CX, or OpenMP; use /Zc:twoPhase-
-  project1.cpp
-c1xx : warning C4199: two-phase name lookup is not supported for C++/CLI, C++/CX, or OpenMP; use /Zc:twoPhase-
-c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(82): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(84): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(91): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(92): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(109): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(110): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(117): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(118): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(86): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(88): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(95): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(96): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(113): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(114): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(121): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(64): warning C4101: 'currentProb': unreferenced local variable
-project1.obj : error LNK2019: unresolved external symbol "float __cdecl Ranf(float,float)" (?Ranf@@YAMMM@Z) referenced in function _main
-project1.obj : error LNK2019: unresolved external symbol "void __cdecl TimeOfDaySeed(void)" (?TimeOfDaySeed@@YAXXZ) referenced in function _main
-C:\Users\Kev\Desktop\CS\College\ParallelProgramming_475\project1\Debug\project1.exe : fatal error LNK1120: 2 unresolved externals
+c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(122): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(125): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\kev\desktop\cs\college\parallelprogramming_475\project1\project1\project1.cpp(134): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  project1.vcxproj -> C:\Users\Kev\Desktop\CS\College\ParallelProgramming_475\project1\Debug\project1.exe
