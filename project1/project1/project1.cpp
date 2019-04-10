@@ -133,13 +133,13 @@ main(int argc, char *argv[])
 		if (megaTrialsPerSecond > maxPerformance)
 			maxPerformance = megaTrialsPerSecond;
 		currentProb = (float)numHits / (float)NUMTRIALS;
-
-		// log results to "results.txt" file
-		std::ofstream results;
-		results.open("results.txt", std::ios::app);
-		results << NUMT << "\t" << NUMTRIALS << "\t" << currentProb << "\t" << megaTrialsPerSecond << endl;
-		results.close();
+		
 	}
+	// log results to "results.txt" file
+	std::ofstream results;
+	results.open("results.txt", std::ios::app);
+	results << NUMT << "\t" << NUMTRIALS << "\t" << currentProb << "\t" << maxPerformance << endl;
+	results.close();
 }
 
 float
