@@ -109,7 +109,7 @@ int main(int argc, char *argv[])
 				tileVolume *= 0.5;
 			}
 
-			if (iu == 0 || iv == NUMNODES - 1) {
+			if (iv == 0 || iv == NUMNODES - 1) {
 				tileVolume *= 0.5;
 			}
 
