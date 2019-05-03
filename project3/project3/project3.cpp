@@ -192,7 +192,7 @@ void Watcher()
 		printf("%d/%d\n", NowMonth + 1, NowYear);
 		printf("Temperature: %f\n", NowTemp);
 		printf("NowHeight: %f\n", NowHeight);
-		printf("NowNumDear: %f\n", NowNumDeer);
+		printf("NowNumDear: %d\n", NowNumDeer);
 
 		if (NowMonth == 11) {
 			NowMonth = 0;
