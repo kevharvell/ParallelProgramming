@@ -62,6 +62,17 @@ int main()
 	NowNumDeer = 1;
 	NowHeight = 1.;
 
+	float ang = (30.*(float)NowMonth + 15.) * (M_PI / 180.);
+
+	float temp = AVG_TEMP - AMP_TEMP * cos(ang);
+	unsigned int seed = time(0);
+	NowTemp = temp + Ranf(&seed, -RANDOM_TEMP, RANDOM_TEMP);
+
+	float precip = AVG_PRECIP_PER_MONTH + AMP_PRECIP_PER_MONTH * sin(ang);
+	NowPrecip = precip + Ranf(&seed, -RANDOM_PRECIP, RANDOM_PRECIP);
+	if (NowPrecip < 0.)
+		NowPrecip = 0.;
+
 	omp_init_lock(&Lock);
 
 	omp_set_num_threads(3);	// same as # of sections
@@ -133,7 +144,7 @@ void Grain()
 	{
 		// compute a temporary next-value for this quantity
 		// based on the current state of the simulation:
-		int NextHeight = NowHeight;
+		float NextHeight = NowHeight;
 		float tempFactor = exp(-SQR((NowTemp - MIDTEMP) / 10.));
 		float precipFactor = exp(-SQR((NowPrecip - MIDPRECIP) / 10.));
 		printf("Temp Factor: %f\t Precip Factor: %f\n", tempFactor, precipFactor);
