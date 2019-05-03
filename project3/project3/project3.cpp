@@ -62,17 +62,6 @@ int main()
 	NowNumDeer = 1;
 	NowHeight = 1.;
 
-	float ang = (30.*(float)NowMonth + 15.) * (M_PI / 180.);
-
-	float temp = AVG_TEMP - AMP_TEMP * cos(ang);
-	unsigned int seed = time(0);
-	NowTemp = temp + Ranf(&seed, -RANDOM_TEMP, RANDOM_TEMP);
-
-	float precip = AVG_PRECIP_PER_MONTH + AMP_PRECIP_PER_MONTH * sin(ang);
-	NowPrecip = precip + Ranf(&seed, -RANDOM_PRECIP, RANDOM_PRECIP);
-	if (NowPrecip < 0.)
-		NowPrecip = 0.;
-
 	omp_init_lock(&Lock);
 
 	omp_set_num_threads(3);	// same as # of sections
@@ -209,10 +198,6 @@ void Watcher()
 		unsigned int seed = time(0);
 		NowTemp = temp + Ranf(&seed, -RANDOM_TEMP, RANDOM_TEMP);
 
-		float precip = AVG_PRECIP_PER_MONTH + AMP_PRECIP_PER_MONTH * sin(ang);
-		NowPrecip = precip + Ranf(&seed, -RANDOM_PRECIP, RANDOM_PRECIP);
-		if (NowPrecip < 0.)
-			NowPrecip = 0.;
 
 		printf("Watcher waiting at #3.\n");
 		// DonePrinting barrier:
