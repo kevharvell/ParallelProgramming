@@ -12,11 +12,13 @@
 
 int	NowYear;			// 2019 - 2024
 int	NowMonth;			// 0 - 11
+int NumMonths;			// tracks total number of months
 
 float	NowPrecip;		// inches of rain per month
 float	NowTemp;		// temperature this month
 float	NowHeight;		// grain height in inches
 int		NowNumDeer;		// number of deer in the current population
+int		NowNumHippies;	// number of hippies in the current population
 
 const float GRAIN_GROWS_PER_MONTH = 8.0;
 const float ONE_DEER_EATS_PER_MONTH = 0.5;
@@ -36,7 +38,7 @@ const float MIDPRECIP = 10.0;
 void GrainDeer();
 void Grain();
 void Watcher();
-void BigFoot();
+void Hippies();
 
 // parallel stuff
 omp_lock_t	Lock;
@@ -57,10 +59,12 @@ int main()
 	// starting date and time:
 	NowMonth = 0;
 	NowYear = 2019;
+	NumMonths = 1;
 
 	// starting state (feel free to change this if you want):
 	NowNumDeer = 1;
 	NowHeight = 1.;
+	NowNumHippies = 1;
 
 	float ang = (30.*(float)NowMonth + 15.) * (M_PI / 180.);
 
@@ -95,10 +99,10 @@ int main()
 			Watcher();
 		}
 
-		//#pragma omp section
-		//{
-			//BigFoot();	// your own
-		//}
+		#pragma omp section
+		{
+			Hippies();	// your own
+		}
 	}       // implied barrier -- all functions must return in order
 		// to allow any of them to get past here
 }
@@ -194,7 +198,10 @@ void Watcher()
 		printf("Precipitation: %f\n", NowPrecip);
 		printf("NowHeight: %f\n", NowHeight);
 		printf("NowNumDear: %d\n", NowNumDeer);
+		printf("NowNumHippies: %d\n", NowNumHippies);
 
+
+		NumMonths++;
 		if (NowMonth == 11) {
 			NowMonth = 0;
 			NowYear++;
@@ -221,26 +228,38 @@ void Watcher()
 	}
 }
 
-void BigFoot()
+void Hippies()
 {
 	while (NowYear < 2025)
 	{
 		// compute a temporary next-value for this quantity
 		// based on the current state of the simulation:
-		//. . .
+		int NextNumHippies = NowNumHippies;
+		if (NowHeight > 5) {
+			NextNumHippies++;
+		}
+		else if (NowHeight < 5) {
+			NextNumHippies--;
+		}
+		if (NextNumHippies < 0) NextNumHippies = 0;
 
+		//printf("Hippies waiting at #1.\n");
 		// DoneComputing barrier:
 		WaitBarrier();
-		//. . .
+		//printf("Hippies resuming at #1.\n");
 
+		NowNumHippies = NextNumHippies;
+
+		//printf("Hippies waiting at #2.\n");
 		// DoneAssigning barrier:
 		WaitBarrier();
-		//. . .
+		//printf("Hippies resuming at #2.\n");
 
+
+		//printf("Hippies waiting at #3.\n");
 		// DonePrinting barrier:
 		WaitBarrier();
-		//. . .
-	}
+		//printf("Hippies resuming at #2.\n");
 }
 
 // specify how many threads will be in the barrier:
