@@ -189,7 +189,7 @@ void Watcher()
 		printf("NowHeight: %f", NowHeight);
 		printf("NowNumDear: %f", NowNumDeer);
 
-		if (NowMonth == 12) {
+		if (NowMonth == 11) {
 			NowMonth = 0;
 			NowYear++;
 		}
