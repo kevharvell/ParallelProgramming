@@ -22,6 +22,7 @@ int		NowNumHippies;	// number of hippies in the current population
 
 const float GRAIN_GROWS_PER_MONTH = 8.0;
 const float ONE_DEER_EATS_PER_MONTH = 0.5;
+const float ONE_HIPPY_CONSUMES_PER_MONTH = 0.2;
 
 const float AVG_PRECIP_PER_MONTH = 6.0;	// average
 const float AMP_PRECIP_PER_MONTH = 6.0;	// plus or minus
@@ -79,8 +80,8 @@ int main()
 
 	omp_init_lock(&Lock);
 
-	omp_set_num_threads(3);	// same as # of sections
-	InitBarrier(3);
+	omp_set_num_threads(4);	// same as # of sections
+	InitBarrier(4);
 
 	#pragma omp parallel sections
 	{
@@ -154,6 +155,7 @@ void Grain()
 		
 		NextHeight += tempFactor * precipFactor * GRAIN_GROWS_PER_MONTH;
 		NextHeight -= (float)NowNumDeer * ONE_DEER_EATS_PER_MONTH;
+		NextHeight -= (float)NowNumHippies * 
 		if (NextHeight < 0) NextHeight = 0;
 
 		//printf("Grain waiting at #1.\n");
