@@ -73,6 +73,8 @@ int main()
 	if (NowPrecip < 0.)
 		NowPrecip = 0.;
 
+	omp_init_lock(&Lock);
+
 	omp_set_num_threads(4);	// same as # of sections
 	InitBarrier(4);
 
