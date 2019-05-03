@@ -116,6 +116,7 @@ void GrainDeer()
 		else if (NowNumDeer < NowHeight) {
 			NextNumDeer = NowNumDeer + 1;
 		}
+		if (NextNumDeer < 0) NextNumDeer = 0;
 
 		printf("GrainDeer waiting at #1.\n");
 		// DoneComputing barrier:
@@ -149,6 +150,7 @@ void Grain()
 		
 		NextHeight += tempFactor * precipFactor * GRAIN_GROWS_PER_MONTH;
 		NextHeight -= (float)NowNumDeer * ONE_DEER_EATS_PER_MONTH;
+		if (NextHeight < 0) NextHeight = 0;
 
 		printf("Grain waiting at #1.\n");
 		// DoneComputing barrier:
