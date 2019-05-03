@@ -187,9 +187,9 @@ void Watcher()
 		WaitBarrier();
 		printf("Watcher resuming at #2.\n");
 
-		printf("Temperature: %f", NowTemp);
-		printf("NowHeight: %f", NowHeight);
-		printf("NowNumDear: %f", NowNumDeer);
+		printf("Temperature: %f\n", NowTemp);
+		printf("NowHeight: %f\n", NowHeight);
+		printf("NowNumDear: %f\n", NowNumDeer);
 
 		if (NowMonth == 11) {
 			NowMonth = 0;
