@@ -202,6 +202,11 @@ void Watcher()
 		printf("NowNumDear: %d\n", NowNumDeer);
 		printf("NowNumHippies: %d\n", NowNumHippies);
 
+		// log results to "results.txt" file
+		std::ofstream results;
+		results.open("results.txt", std::ios::app);
+		results << NumMonths << "\t" << NowTemp << "\t" << NowPrecip << "\t" << NowHeight << "\t" << NowNumDeer << "\t" << NowNumHippies << std::endl;
+		results.close();
 
 		NumMonths++;
 		if (NowMonth == 11) {
