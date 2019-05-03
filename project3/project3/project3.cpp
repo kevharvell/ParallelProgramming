@@ -147,6 +147,7 @@ void Grain()
 		int NextHeight = NowHeight;
 		float tempFactor = exp(-SQR((NowTemp - MIDTEMP) / 10.));
 		float precipFactor = exp(-SQR((NowPrecip - MIDPRECIP) / 10.));
+		printf("Temp Factor: %f\t Precip Factor: %f\n", tempFactor, precipFactor);
 		
 		NextHeight += tempFactor * precipFactor * GRAIN_GROWS_PER_MONTH;
 		NextHeight -= (float)NowNumDeer * ONE_DEER_EATS_PER_MONTH;
