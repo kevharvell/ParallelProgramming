@@ -118,23 +118,23 @@ void GrainDeer()
 		}
 		if (NextNumDeer < 0) NextNumDeer = 0;
 
-		printf("GrainDeer waiting at #1.\n");
+		//printf("GrainDeer waiting at #1.\n");
 		// DoneComputing barrier:
 		WaitBarrier();
-		printf("GrainDeer resuming at #1.\n");
+		//printf("GrainDeer resuming at #1.\n");
 
 		NowNumDeer = NextNumDeer;
 		
-		printf("GrainDeer waiting at #2.\n");
+		//printf("GrainDeer waiting at #2.\n");
 		// DoneAssigning barrier:
 		WaitBarrier();
-		printf("GrainDeer resuming at #2.\n");
+		//printf("GrainDeer resuming at #2.\n");
 
 		
-		printf("GrainDeer waiting at #3.\n");
+		//printf("GrainDeer waiting at #3.\n");
 		// DonePrinting barrier:
 		WaitBarrier();
-		printf("GrainDeer resuming at #2.\n");
+		//printf("GrainDeer resuming at #2.\n");
 	}
 }
 
@@ -153,23 +153,23 @@ void Grain()
 		NextHeight -= (float)NowNumDeer * ONE_DEER_EATS_PER_MONTH;
 		if (NextHeight < 0) NextHeight = 0;
 
-		printf("Grain waiting at #1.\n");
+		//printf("Grain waiting at #1.\n");
 		// DoneComputing barrier:
 		WaitBarrier();
-		printf("Grain resuming at #1.\n");
+		//printf("Grain resuming at #1.\n");
 
 		NowHeight = NextHeight;
 
-		printf("Grain waiting at #2.\n");
+		//printf("Grain waiting at #2.\n");
 		// DoneAssigning barrier:
 		WaitBarrier();
-		printf("Grain resuming at #2.\n");
+		//printf("Grain resuming at #2.\n");
 
 
-		printf("Grain waiting at #3.\n");
+		//printf("Grain waiting at #3.\n");
 		// DonePrinting barrier:
 		WaitBarrier();
-		printf("Grain resuming at #2.\n");
+		//printf("Grain resuming at #2.\n");
 	}
 }
 
@@ -180,15 +180,15 @@ void Watcher()
 		// compute a temporary next-value for this quantity
 		// based on the current state of the simulation:
 
-		printf("Watcher waiting at #1.\n");
+		//printf("Watcher waiting at #1.\n");
 		// DoneComputing barrier:
 		WaitBarrier();
-		printf("Watcher resuming at #1.\n");
+		//printf("Watcher resuming at #1.\n");
 
-		printf("Watcher waiting at #2.\n");
+		//printf("Watcher waiting at #2.\n");
 		// DoneAssigning barrier:
 		WaitBarrier();
-		printf("Watcher resuming at #2.\n");
+		//printf("Watcher resuming at #2.\n");
 
 		printf("%d/%d\n", NowMonth + 1, NowYear);
 		printf("Temperature: %f\n", NowTemp);
@@ -214,10 +214,10 @@ void Watcher()
 		if (NowPrecip < 0.)
 			NowPrecip = 0.;
 
-		printf("Watcher waiting at #3.\n");
+		//printf("Watcher waiting at #3.\n");
 		// DonePrinting barrier:
 		WaitBarrier();
-		printf("Watcher resuming at #3.\n");
+		//printf("Watcher resuming at #3.\n");
 	}
 }
 
