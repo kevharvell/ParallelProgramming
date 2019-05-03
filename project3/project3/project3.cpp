@@ -260,6 +260,7 @@ void Hippies()
 		// DonePrinting barrier:
 		WaitBarrier();
 		//printf("Hippies resuming at #2.\n");
+	}
 }
 
 // specify how many threads will be in the barrier:
