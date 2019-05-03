@@ -109,7 +109,7 @@ void GrainDeer()
 	{
 		// compute a temporary next-value for this quantity
 		// based on the current state of the simulation:
-		int NextNumDeer;
+		int NextNumDeer = NowNumDeer;
 		if (NowNumDeer > NowHeight) {
 			NextNumDeer = NowNumDeer - 1;
 		}
@@ -144,7 +144,7 @@ void Grain()
 	{
 		// compute a temporary next-value for this quantity
 		// based on the current state of the simulation:
-		int NextHeight;
+		int NextHeight = NowHeight;
 		float tempFactor = exp(-SQR((NowTemp - MIDTEMP) / 10.));
 		float precipFactor = exp(-SQR((NowPrecip - MIDPRECIP) / 10.));
 		
