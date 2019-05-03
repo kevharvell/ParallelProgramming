@@ -111,10 +111,10 @@ void GrainDeer()
 		// based on the current state of the simulation:
 		int NextNumDeer = NowNumDeer;
 		if (NowNumDeer > NowHeight) {
-			NextNumDeer = NowNumDeer - 1;
+			NextNumDeer--;
 		}
 		else if (NowNumDeer < NowHeight) {
-			NextNumDeer = NowNumDeer + 1;
+			NextNumDeer++;
 		}
 		if (NextNumDeer < 0) NextNumDeer = 0;
 
