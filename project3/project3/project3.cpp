@@ -209,6 +209,11 @@ void Watcher()
 		unsigned int seed = time(0);
 		NowTemp = temp + Ranf(&seed, -RANDOM_TEMP, RANDOM_TEMP);
 
+		float precip = AVG_PRECIP_PER_MONTH + AMP_PRECIP_PER_MONTH * sin(ang);
+		NowPrecip = precip + Ranf(&seed, -RANDOM_PRECIP, RANDOM_PRECIP);
+		if (NowPrecip < 0.)
+			NowPrecip = 0.;
+
 		printf("Watcher waiting at #3.\n");
 		// DonePrinting barrier:
 		WaitBarrier();
