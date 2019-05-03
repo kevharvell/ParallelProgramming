@@ -189,10 +189,6 @@ void Watcher()
 		printf("NowHeight: %f", NowHeight);
 		printf("NowNumDear: %f", NowNumDeer);
 
-		// advance time
-		NowMonth = 0;
-		NowYear = 2019;
-
 		if (NowMonth == 12) {
 			NowMonth = 0;
 			NowYear++;
