@@ -155,7 +155,7 @@ void Grain()
 		
 		NextHeight += tempFactor * precipFactor * GRAIN_GROWS_PER_MONTH;
 		NextHeight -= (float)NowNumDeer * ONE_DEER_EATS_PER_MONTH;
-		NextHeight -= (float)NowNumHippies * 
+		NextHeight -= (float)NowNumHippies * ONE_HIPPY_CONSUMES_PER_MONTH;
 		if (NextHeight < 0) NextHeight = 0;
 
 		//printf("Grain waiting at #1.\n");
