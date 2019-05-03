@@ -75,8 +75,8 @@ int main()
 
 	omp_init_lock(&Lock);
 
-	omp_set_num_threads(4);	// same as # of sections
-	InitBarrier(4);
+	omp_set_num_threads(3);	// same as # of sections
+	InitBarrier(3);
 
 	#pragma omp parallel sections
 	{
@@ -95,10 +95,10 @@ int main()
 			Watcher();
 		}
 
-		#pragma omp section
-		{
+		//#pragma omp section
+		//{
 			//BigFoot();	// your own
-		}
+		//}
 	}       // implied barrier -- all functions must return in order
 		// to allow any of them to get past here
 }
