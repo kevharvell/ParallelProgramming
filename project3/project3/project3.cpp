@@ -281,7 +281,7 @@ float
 Ranf(unsigned int *seedp, float low, float high)
 {
 	float r = (float)rand_r(seedp);              // 0 - RAND_MAX
-
+	printf("Random #: %f", low + r * (high - low) / (float)RAND_MAX);
 	return(low + r * (high - low) / (float)RAND_MAX);
 }
 
