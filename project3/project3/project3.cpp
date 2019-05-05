@@ -245,7 +245,7 @@ void Hippies()
 		if (NowHeight > 5) {
 			NextNumHippies++;
 		}
-		else if (NowHeight < 5) {
+		else if (NowTemp < 40 || NowTemp > 70) {
 			NextNumHippies--;
 		}
 		if (NextNumHippies < 0) NextNumHippies = 0;
