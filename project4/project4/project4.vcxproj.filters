@@ -37,5 +37,8 @@
     <None Include="Makefile">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="script.sh">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
