@@ -57,13 +57,6 @@ int main()
 			maxPerformance = megaMultsPerSecond;
 		}
 		
-
-		cout << "Array A: " << endl;
-		displayArray(A, ARRAY_SIZE);
-		cout << "Array B: " << endl;
-		displayArray(B, ARRAY_SIZE);
-		cout << "Array C: " << endl;
-		displayArray(C, ARRAY_SIZE);
 		cout << "Max Performance: " << maxPerformance << endl;
 	}
 
@@ -79,13 +72,6 @@ int main()
 			maxPerformance = megaMultsPerSecond;
 		}
 
-
-		cout << "Array A: " << endl;
-		displayArray(A, ARRAY_SIZE);
-		cout << "Array B: " << endl;
-		displayArray(B, ARRAY_SIZE);
-		cout << "Array C: " << endl;
-		displayArray(C, ARRAY_SIZE);
 		cout << "Max Performance: " << maxPerformance << endl;
 	}
 
