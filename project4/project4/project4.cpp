@@ -76,6 +76,36 @@ int main()
 	}
 	cout << "Max Performance NON-SIMD Multiplication: " << maxPerformance << endl;
 
+	maxPerformance = 0;
+	// looking for the maximum performance for NON-SIMD Multiplication
+	for (int t = 0; t < NUMTRIES; t++)
+	{
+		double time0 = omp_get_wtime();
+		SimdMulSum(A, B, ARRAY_SIZE);
+		double time1 = omp_get_wtime();
+		double megaMultsPerSecond = (double)ARRAY_SIZE / (time1 - time0) / 1000000.;
+		if (megaMultsPerSecond > maxPerformance) {
+			maxPerformance = megaMultsPerSecond;
+		}
+
+	}
+	cout << "Max Performance SIMD Multiplication Reduction: " << maxPerformance << endl;
+
+	maxPerformance = 0;
+	// looking for the maximum performance for NON-SIMD Multiplication
+	for (int t = 0; t < NUMTRIES; t++)
+	{
+		double time0 = omp_get_wtime();
+		mulSum(A, B, ARRAY_SIZE);
+		double time1 = omp_get_wtime();
+		double megaMultsPerSecond = (double)ARRAY_SIZE / (time1 - time0) / 1000000.;
+		if (megaMultsPerSecond > maxPerformance) {
+			maxPerformance = megaMultsPerSecond;
+		}
+
+	}
+	cout << "Max Performance NON-SIMD Multiplication Reduction: " << maxPerformance << endl;
+
 	return 0;
 }
 
@@ -97,4 +127,15 @@ void mul(float A[], float B[], float C[], int len) {
 	for (int i = 0; i < len; i++) {
 		C[i] = A[i] * B[i];
 	}
+}
+
+float
+mulSum(float *a, float *b, int len)
+{
+	float sum;
+	for (int i = 0; i < len; i++)
+	{
+		sum += a[i] * b[i];
+	}
+	return sum;
 }
