@@ -57,8 +57,9 @@ int main()
 			maxPerformance = megaMultsPerSecond;
 		}
 		
-		cout << "Max Performance: " << maxPerformance << endl;
+		
 	}
+	cout << "Max Performance SIMD Multiplication: " << maxPerformance << endl;
 
 	maxPerformance = 0;
 	// looking for the maximum performance for NON-SIMD Multiplication
@@ -72,8 +73,8 @@ int main()
 			maxPerformance = megaMultsPerSecond;
 		}
 
-		cout << "Max Performance: " << maxPerformance << endl;
 	}
+	cout << "Max Performance NON-SIMD Multiplication: " << maxPerformance << endl;
 
 	return 0;
 }
