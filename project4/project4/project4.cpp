@@ -79,6 +79,6 @@ void displayArray(float arr[], int len) {
 void fillArray(float arr[], int len)
 {
 	for (int i = 0; i < len; i++) {
-		arr[i] = (float) rand();
+		arr[i] = (float) (rand() % 50);
 	}
 }
