@@ -15,7 +15,7 @@ using std::endl;
 
 // how many tries to discover the maximum performance:
 #ifndef ARRAY_SIZE
-#define ARRAY_SIZE	10
+#define ARRAY_SIZE	1000
 #endif
 
 // arrays to perform multiplication/reduction on
