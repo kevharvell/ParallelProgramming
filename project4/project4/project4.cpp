@@ -61,6 +61,12 @@ int main()
 		
 	}
 	cout << "Max Performance SIMD Multiplication: " << maxPerformance << endl;
+	
+	// log results to "results.txt" file
+	std::ofstream results;
+	results.open("results.txt", std::ios::app);
+	results << "SIMDMul" << "\t" << ARRAY_SIZE << "\t" << maxPerformance << endl;
+	results.close();
 
 	maxPerformance = 0;
 	// looking for the maximum performance for NON-SIMD Multiplication
@@ -77,6 +83,12 @@ int main()
 	}
 	cout << "Max Performance NON-SIMD Multiplication: " << maxPerformance << endl;
 
+	// log results to "results.txt" file
+	std::ofstream results;
+	results.open("results.txt", std::ios::app);
+	results << "NonSIMDMul" << "\t" << ARRAY_SIZE << "\t" << maxPerformance << endl;
+	results.close();
+
 	maxPerformance = 0;
 	// looking for the maximum performance for NON-SIMD Multiplication
 	for (int t = 0; t < NUMTRIES; t++)
@@ -92,6 +104,12 @@ int main()
 	}
 	cout << "Max Performance SIMD Multiplication Reduction: " << maxPerformance << endl;
 
+	// log results to "results.txt" file
+	std::ofstream results;
+	results.open("results.txt", std::ios::app);
+	results << "SIMDMulSum" << "\t" << ARRAY_SIZE << "\t" << maxPerformance << endl;
+	results.close();
+
 	maxPerformance = 0;
 	// looking for the maximum performance for NON-SIMD Multiplication
 	for (int t = 0; t < NUMTRIES; t++)
@@ -106,6 +124,12 @@ int main()
 
 	}
 	cout << "Max Performance NON-SIMD Multiplication Reduction: " << maxPerformance << endl;
+
+	// log results to "results.txt" file
+	std::ofstream results;
+	results.open("results.txt", std::ios::app);
+	results << "NonSIMDMulSum" << "\t" << ARRAY_SIZE << "\t" << maxPerformance << endl;
+	results.close();
 
 	return 0;
 }
