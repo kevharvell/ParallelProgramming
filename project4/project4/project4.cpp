@@ -26,6 +26,7 @@ float C[ARRAY_SIZE];
 // function prototypes
 void fillArray(float arr[], int len);
 void displayArray(float arr[], int len);
+void mul(float *, float *, float *, int);
 
 int main()
 {
@@ -45,7 +46,7 @@ int main()
 	fillArray(B, ARRAY_SIZE);
 	fillArray(C, ARRAY_SIZE);
 
-	// looking for the maximum performance:
+	// looking for the maximum performance for SIMD Multiplication:
 	for (int t = 0; t < NUMTRIES; t++)
 	{
 		double time0 = omp_get_wtime();
@@ -56,6 +57,28 @@ int main()
 			maxPerformance = megaMultsPerSecond;
 		}
 		
+
+		cout << "Array A: " << endl;
+		displayArray(A, ARRAY_SIZE);
+		cout << "Array B: " << endl;
+		displayArray(B, ARRAY_SIZE);
+		cout << "Array C: " << endl;
+		displayArray(C, ARRAY_SIZE);
+		cout << "Max Performance: " << maxPerformance << endl;
+	}
+
+	maxPerformance = 0;
+	// looking for the maximum performance for NON-SIMD Multiplication
+	for (int t = 0; t < NUMTRIES; t++)
+	{
+		double time0 = omp_get_wtime();
+		mul(A, B, C, ARRAY_SIZE);
+		double time1 = omp_get_wtime();
+		double megaMultsPerSecond = (double)ARRAY_SIZE / (time1 - time0) / 1000000.;
+		if (megaMultsPerSecond > maxPerformance) {
+			maxPerformance = megaMultsPerSecond;
+		}
+
 
 		cout << "Array A: " << endl;
 		displayArray(A, ARRAY_SIZE);
@@ -80,5 +103,11 @@ void fillArray(float arr[], int len)
 {
 	for (int i = 0; i < len; i++) {
 		arr[i] = (float) (rand() % 50);
+	}
+}
+
+void mul(float A[], float B[], float C[], int len) {
+	for (int i = 0; i < len; i++) {
+		C[i] = A[i] * B[i];
 	}
 }
