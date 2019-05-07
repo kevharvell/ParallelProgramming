@@ -29,6 +29,9 @@ void displayArray(float arr[], int len);
 void mul(float *, float *, float *, int);
 float mulSum(float *, float *, int);
 
+// file I/O
+std::ofstream results;
+
 int main()
 {
 	#ifndef _OPENMP
@@ -63,7 +66,6 @@ int main()
 	cout << "Max Performance SIMD Multiplication: " << maxPerformance << endl;
 	
 	// log results to "results.txt" file
-	std::ofstream results;
 	results.open("results.txt", std::ios::app);
 	results << "SIMDMul" << "\t" << ARRAY_SIZE << "\t" << maxPerformance << endl;
 	results.close();
@@ -84,7 +86,6 @@ int main()
 	cout << "Max Performance NON-SIMD Multiplication: " << maxPerformance << endl;
 
 	// log results to "results.txt" file
-	std::ofstream results;
 	results.open("results.txt", std::ios::app);
 	results << "NonSIMDMul" << "\t" << ARRAY_SIZE << "\t" << maxPerformance << endl;
 	results.close();
@@ -105,7 +106,6 @@ int main()
 	cout << "Max Performance SIMD Multiplication Reduction: " << maxPerformance << endl;
 
 	// log results to "results.txt" file
-	std::ofstream results;
 	results.open("results.txt", std::ios::app);
 	results << "SIMDMulSum" << "\t" << ARRAY_SIZE << "\t" << maxPerformance << endl;
 	results.close();
@@ -126,7 +126,6 @@ int main()
 	cout << "Max Performance NON-SIMD Multiplication Reduction: " << maxPerformance << endl;
 
 	// log results to "results.txt" file
-	std::ofstream results;
 	results.open("results.txt", std::ios::app);
 	results << "NonSIMDMulSum" << "\t" << ARRAY_SIZE << "\t" << maxPerformance << endl;
 	results.close();
