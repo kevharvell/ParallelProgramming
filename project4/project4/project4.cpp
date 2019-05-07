@@ -27,6 +27,7 @@ float C[ARRAY_SIZE];
 void fillArray(float arr[], int len);
 void displayArray(float arr[], int len);
 void mul(float *, float *, float *, int);
+float mulSum(float *, float *, int);
 
 int main()
 {
