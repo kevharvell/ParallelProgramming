@@ -3,4 +3,4 @@ simd.p4.o:	simd.p4.h  simd.p4.cpp
 
 project4:	project4.cpp simd.p4.o
 	chmod u+x script.sh
-	script.sh
+	./script.sh
