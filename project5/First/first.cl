@@ -6,6 +6,7 @@ ArrayMult( global const float *dA, global const float *dB, global float *dD )
 
 	dD[gid] = dA[gid] * dB[gid];
 }
+kernel
 void
 ArrayMultAdd( global const float *dA, global const float *dB, global float *dC, global float *dD)
 {
