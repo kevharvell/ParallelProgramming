@@ -222,7 +222,7 @@ main(int argc, char *argv[])
 
 	// did it work?
 
-	for (int i = 0; i < NUM_ELEMENTS; i++)
+	/*for (int i = 0; i < NUM_ELEMENTS; i++)
 	{
 		float expected = hA[i] * hB[i] + hC[i];
 		if (fabs(hD[i] - expected) > TOL)
@@ -233,7 +233,7 @@ main(int argc, char *argv[])
 				i, LookAtTheBits(hA[i]), LookAtTheBits(hB[i]), LookAtTheBits(hC[i]), LookAtTheBits(expected));
 		}
 	}
-
+*/
 	fprintf(stderr, "%8d\t%4d\t%10d\t%10.3lf GigaMultsPerSecond\n",
 		NUM_ELEMENTS, LOCAL_SIZE, NUM_WORK_GROUPS, (double)NUM_ELEMENTS / (time1 - time0) / 1000000000.);
 
