@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="script.sh" />
+    <None Include="script2.sh" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

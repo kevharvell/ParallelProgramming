@@ -26,5 +26,8 @@
     <None Include="script.sh">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="script2.sh">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
