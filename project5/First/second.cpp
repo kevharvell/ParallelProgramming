@@ -188,11 +188,11 @@ main(int argc, char *argv[])
 	if (status != CL_SUCCESS)
 		fprintf(stderr, "clSetKernelArg failed (2)\n");
 
-	status = clSetKernelArg(kernel, 1, sizeof(cl_mem), &dC);
+	status = clSetKernelArg(kernel, 2, sizeof(cl_mem), &dC);
 	if (status != CL_SUCCESS)
 		fprintf(stderr, "clSetKernelArg failed (2)\n");
 
-	status = clSetKernelArg(kernel, 2, sizeof(cl_mem), &dD);
+	status = clSetKernelArg(kernel, 3, sizeof(cl_mem), &dD);
 	if (status != CL_SUCCESS)
 		fprintf(stderr, "clSetKernelArg failed (3)\n");
 
