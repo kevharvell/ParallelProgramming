@@ -129,6 +129,10 @@ main( int argc, char *argv[ ] )
 	if (status != CL_SUCCESS)
 		fprintf(stderr, "clEnqueueWriteBuffer failed (3)\n");
 
+	status = clEnqueueWriteBuffer(cmdQueue, dD, CL_FALSE, 0, dataSize, hD, 0, NULL, NULL);
+	if (status != CL_SUCCESS)
+		fprintf(stderr, "clEnqueueWriteBuffer failed (4)\n");
+
 	Wait( cmdQueue );
 
 	// 7. read the kernel code from a file:
@@ -171,6 +175,8 @@ main( int argc, char *argv[ ] )
 	cl_kernel kernel = clCreateKernel( program, "ArrayMult", &status );
 	if( status != CL_SUCCESS )
 		fprintf( stderr, "clCreateKernel failed\n" );
+
+
 
 	// 10. setup the arguments to the kernel object:
 

@@ -18,6 +18,9 @@
     <ClCompile Include="first.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="second.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="script.sh">

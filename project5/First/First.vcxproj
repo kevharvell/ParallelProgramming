@@ -80,6 +80,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="first.cpp" />
+    <ClCompile Include="second.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="script.sh" />
