@@ -6,7 +6,7 @@ do
 	do
 		echo NUM_ELEMENTS = $s
 		echo LOCAL_SIZE = $t
-		g++ -o first first.cpp /scratch/cuda-7.0/lib64/libOpenCL.so -lm -fopenmp
+		g++ -DNUM_ELEMENTS=$s -DLOCAL_SIZE=$t -o first first.cpp /scratch/cuda-7.0/lib64/libOpenCL.so -lm -fopenmp
 		./first
 	done
 done
