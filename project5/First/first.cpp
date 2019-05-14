@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
+#include <fstream>
 #include <stdlib.h>
 #ifdef WIN32
 #include <windows.h>
@@ -229,6 +230,12 @@ main( int argc, char *argv[ ] )
 
 	fprintf( stderr, "%8d\t%4d\t%10d\t%10.3lf GigaMultsPerSecond\n",
 		NUM_ELEMENTS, LOCAL_SIZE, NUM_WORK_GROUPS, (double)NUM_ELEMENTS/(time1-time0)/1000000000. );
+
+	// log results to "results.txt" file
+	std::ofstream results;
+	results.open("results.txt", std::ios::app);
+	results << NUM_ELEMENTS << "\t" << LOCAL_SIZE << "\t" << NUM_WORK_GROUPS << "\t" << (double)NUM_ELEMENTS / (time1 - time0) / 1000000000. << std::endl;
+	results.close();
 
 #ifdef WIN32
 	Sleep( 2000 );
