@@ -81,10 +81,12 @@
   <ItemGroup>
     <ClCompile Include="first.cpp" />
     <ClCompile Include="second.cpp" />
+    <ClCompile Include="third.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="script.sh" />
     <None Include="script2.sh" />
+    <None Include="script3.sh" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

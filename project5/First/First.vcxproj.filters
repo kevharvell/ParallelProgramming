@@ -21,12 +21,18 @@
     <ClCompile Include="second.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="third.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="script.sh">
       <Filter>Source Files</Filter>
     </None>
     <None Include="script2.sh">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="script3.sh">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
