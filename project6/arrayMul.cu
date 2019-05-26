@@ -51,7 +51,7 @@ __global__  void MonteCarlo( float *xcs, float *ycs, float *rs )
     float c = xc * xc + yc * yc - r * r;
     float d = b * b - 4.*a*c;
 
-    if (d < 0) continue;
+    if (d >= 0) break;
 
     // hits the circle:
     // get the first intersection:
@@ -60,7 +60,7 @@ __global__  void MonteCarlo( float *xcs, float *ycs, float *rs )
     float t2 = (-b - d) / (2.*a);	// time to intersect the circle
     float tmin = t1 < t2 ? t1 : t2;		// only care about the first intersection
 
-    if (tmin < 0) continue;
+    if (tmin >= 0) break;
 
     // where does it intersect the circle?
     float xcir = tmin;
@@ -88,7 +88,7 @@ __global__  void MonteCarlo( float *xcs, float *ycs, float *rs )
     // find out if it hits the infinite plate:
     float t = ( 0. - ycir ) / outy;
 
-    if (t < 0) continue;
+    if (t >= 0) break;
 
 	__shared__ int numHits[NUMTRIALS];
 	numHits[gid]++;
@@ -193,20 +193,6 @@ main( int argc, char* argv[ ] )
 	double gigaLasersPerSecond = lasersPerSecond / 1000000000.;
 	fprintf( stderr, "Array Size = %10d, GigaLasers/Second = %10.2lf\n", NUMTRIALS, gigaLasersPerSecond );
 
-	// copy result from the device to the host:
-
-	status = cudaMemcpy( hC, dC, (NUMTRIALS/BLOCKSIZE)*sizeof(float), cudaMemcpyDeviceToHost );
-		checkCudaErrors( status );
-
-	// check the sum :
-
-	int sum = 0;
-	for(int i = 0; i < SIZE/BLOCKSIZE; i++ )
-	{
-		//fprintf(stderr, "hrs[%6d] = %10.2f\n", i, hrs[i]);
-		sum += (double)hC[i];
-	}
-	fprintf( stderr, "\nsum = %10.2lf\n", sum );
 
 	// clean up memory:
 	delete [ ] hxcs;
