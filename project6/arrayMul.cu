@@ -20,7 +20,7 @@
 #endif
 
 #ifndef NUMTRIALS
-#define NUMTRIALS		100		// to make the timing more accurate
+#define NUMTRIALS		10000		// to make the timing more accurate
 #endif
 
 // ranges for the random numbers:
