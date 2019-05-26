@@ -189,7 +189,9 @@ main( int argc, char* argv[ ] )
 	// compute and print the performance
 
 	double secondsTotal = 0.001 * (double)msecTotal;
+	std::cout << "Seconds Total" << secondsTotal << std::endl;
 	double lasersPerSecond = (float)NUMTRIALS / secondsTotal;
+	std::cout << "Lasers per second" << lasersPerSecond << std::endl;
 	double gigaLasersPerSecond = lasersPerSecond / 1000000000.;
 	fprintf( stderr, "Array Size = %10d, GigaLasers/Second = %10.2lf\n", NUMTRIALS, gigaLasersPerSecond );
 
