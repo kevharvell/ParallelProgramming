@@ -90,8 +90,6 @@ __global__  void MonteCarlo( float *xcs, float *ycs, float *rs )
 
     if (t >= 0) return;
 
-	__shared__ int numHits[NUMTRIALS];
-	numHits[gid]++;
 }
 
 
