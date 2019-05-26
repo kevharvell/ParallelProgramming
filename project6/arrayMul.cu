@@ -190,7 +190,7 @@ main( int argc, char* argv[ ] )
 	std::cout << "Seconds Total" << secondsTotal << std::endl;
 	double lasersPerSecond = (float)NUMTRIALS * (float)NUMTRIALS / secondsTotal;
 	std::cout << "Lasers per second" << lasersPerSecond << std::endl;
-	double megaLasersPerSecond = lasersPerSecond / 1000000.;
+	double megaLasersPerSecond = lasersPerSecond / 1000000000.;
 	fprintf( stderr, "Array Size = %10d, MegaLasers/Second = %10.2lf\n", NUMTRIALS, megaLasersPerSecond );
 
 	// log results to "results.txt" file
