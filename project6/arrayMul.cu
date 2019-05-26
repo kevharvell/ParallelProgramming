@@ -188,7 +188,7 @@ main( int argc, char* argv[ ] )
 
 	double secondsTotal = 0.001 * (double)msecTotal;
 	std::cout << "Seconds Total" << secondsTotal << std::endl;
-	double lasersPerSecond = (float)NUMTRIALS / secondsTotal;
+	double lasersPerSecond = (float)NUMTRIALS * (float)NUMTRIALS / secondsTotal;
 	std::cout << "Lasers per second" << lasersPerSecond << std::endl;
 	double megaLasersPerSecond = lasersPerSecond / 1000000.;
 	fprintf( stderr, "Array Size = %10d, MegaLasers/Second = %10.2lf\n", NUMTRIALS, megaLasersPerSecond );
