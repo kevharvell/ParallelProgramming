@@ -51,7 +51,7 @@ __global__  void MonteCarlo( float *xcs, float *ycs, float *rs )
     float c = xc * xc + yc * yc - r * r;
     float d = b * b - 4.*a*c;
 
-    if (d >= 0) break;
+    if (d >= 0) return;
 
     // hits the circle:
     // get the first intersection:
@@ -60,7 +60,7 @@ __global__  void MonteCarlo( float *xcs, float *ycs, float *rs )
     float t2 = (-b - d) / (2.*a);	// time to intersect the circle
     float tmin = t1 < t2 ? t1 : t2;		// only care about the first intersection
 
-    if (tmin >= 0) break;
+    if (tmin >= 0) return;
 
     // where does it intersect the circle?
     float xcir = tmin;
@@ -88,7 +88,7 @@ __global__  void MonteCarlo( float *xcs, float *ycs, float *rs )
     // find out if it hits the infinite plate:
     float t = ( 0. - ycir ) / outy;
 
-    if (t >= 0) break;
+    if (t >= 0) return;
 
 	__shared__ int numHits[NUMTRIALS];
 	numHits[gid]++;
