@@ -195,6 +195,12 @@ main( int argc, char* argv[ ] )
 	double megaLasersPerSecond = lasersPerSecond / 1000000.;
 	fprintf( stderr, "Array Size = %10d, MegaLasers/Second = %10.2lf\n", NUMTRIALS, megaLasersPerSecond );
 
+	// log results to "results.txt" file
+	std::ofstream results;
+	results.open("results.txt", std::ios::app);
+	results << NUMTRIALS << "\t" << BLOCKSIZE << "\t" << megaLasersPerSecond << std::endl;
+	results.close();
+
 
 	// clean up memory:
 	delete [ ] hxcs;
